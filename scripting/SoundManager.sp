@@ -506,7 +506,7 @@ public Action Command_Sounds(int client, int args)
 
 	if(gEV_Type == Engine_CSGO)
 	{
-		FormatEx(sDisplay, 64, "Stop Active Sounds\n ");
+		FormatEx(sDisplay, 64, "一键关闭地图音乐\n ");
 		menu.AddItem("stopactive", sDisplay);
 	}
 
@@ -552,6 +552,8 @@ public int MenuHandler_Sounds(Menu menu, MenuAction action, int param1, int para
 		{
 			if(StrEqual(sInfo, "stopactive"))
 			{
+				gI_Settings[param1] |= (Mute_Soundscapes | Mute_AmbientSounds);
+
 				ClientCommand(param1, "playgamesound Music.StopAllExceptMusic");
 				ClientCommand(param1, "playgamesound Music.StopAllMusic");
 				Command_Sounds(param1, 0);
