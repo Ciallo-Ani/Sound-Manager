@@ -73,6 +73,7 @@ public void OnPluginStart()
 	}
 
 	// Commands
+	RegConsoleCmd("sm_bgm", Command_Sounds);
 	RegConsoleCmd("sm_snd", Command_Sounds);
 	RegConsoleCmd("sm_sound", Command_Sounds);
 	RegConsoleCmd("sm_sounds", Command_Sounds);
