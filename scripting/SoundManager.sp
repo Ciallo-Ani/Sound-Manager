@@ -56,6 +56,8 @@ bool gB_LateLoad = false;
 public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
 {
 	gB_LateLoad = late;
+
+	return APLRes_Success;
 }
 
 public void OnPluginStart()
@@ -618,6 +620,8 @@ public Action Event_RoundStart(Event event, const char[] name, bool dontBroadcas
 		}
 	}
 	gB_EntitiesFound = true;
+
+	return Plugin_Continue;
 }
 //----------------------------------------------------
 
